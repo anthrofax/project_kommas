@@ -26,11 +26,13 @@ export const sendPasswordResetEmail = async (email: string, token: string) => {
 export const sendVerificationEmail = async (email: string, token: string) => {
   const confirmLink = `${domain}/auth/new-verification?token=${token}`;
 
-  await resend.emails.send({
+  const test = await resend.emails.send({
     from: "Ixu <noreply@ixuapps.online>",
     to: email,
     subject: "Confirm your email",
     react: Email({ url: confirmLink, titleEmail:"Verification Account" }),
     text: "", // Provide an empty string as a placeholder for the text version
   });
+
+  console.log(test)
 };
