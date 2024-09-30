@@ -1,7 +1,6 @@
 import { transporter } from "./nodemailer";
 import { resend } from "./resend";
 import { Email } from "@/components/email/email";
-import ReactDOMServer from "react-dom/server";
 const domain = process.env.NEXT_PUBLIC_APP_URL;
 
 export const sendTwoFactorTokenEmail = async (email: string, token: string) => {
